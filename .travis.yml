@@ -9,3 +9,13 @@ install:
   - yarn install
 script:
   - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: false
+  local_dir: dist
+  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  name: bunmoom
+  email: bunmoom@163.com
+  on:
+    branch: master
